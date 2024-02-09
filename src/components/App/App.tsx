@@ -1,28 +1,28 @@
-import logo from '../../assets/logo.svg';
+import React from 'react';
 
-import './App.scss';
+const ingredients: string[] = ['farine', 'lait', 'oeuf'];
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-
-        <p>
-          Edit <code>src/components/App/App.tsx</code> and save to reload.
-        </p>
-
-        <a
-          className="App-link"
-          href="https://react.dev/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header>
+        <h1>Titre du header</h1>
       </header>
-    </div>
+      <main>
+        <h2>Titre du main</h2>
+        <h3>Liste de course</h3>
+        <ul>
+          {ingredients.map((ingredient, key) => (
+            <li key={key}>{ingredient}</li>
+          ))}
+        </ul>
+      </main>
+      <footer>
+        <h1>Titre footer</h1>
+        <p>Texte du Footer</p>
+      </footer>
+    </>
   );
-}
+};
 
 export default App;
